@@ -37,6 +37,37 @@ page 50000 "SDH Demos"
                     end;
                 }
             }
+
+            group("CalcFields Vs AutoCalcFields")
+            {
+                field(CalcFieldsCALLbl; CalcFieldsCALLbl)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'CalcFields';
+                    Caption = 'C/AL';
+                    ShowCaption = false;
+                    trigger OnDrillDown()
+                    var
+                        AutoCalcFieldsDemo: Codeunit "SDH Auto Calc Fields Demo";
+                    begin
+                        AutoCalcFieldsDemo.CalcFieldStyle();
+                    end;
+                }
+                field(AutoCalcFieldsCALLbl; AutoCalcFieldsCALLbl)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'AutoCalcFields';
+                    ShowCaption = false;
+                    Caption = 'AL';
+                    trigger OnDrillDown()
+                    var
+                        AutoCalcFieldsDemo: Codeunit "SDH Auto Calc Fields Demo";
+                    begin
+                        AutoCalcFieldsDemo.AutoCalcFieldStyle();
+                    end;
+                }
+            }
+
             group(ListDemo)
             {
                 field(ListDemoLbl; ListDemoLbl)
@@ -104,6 +135,9 @@ page 50000 "SDH Demos"
     var
         TextBuilderCALLbl: Label 'Text Builder C/AL';
         TextBuilderALLbl: Label 'Text Builder AL';
+
+        CalcFieldsCALLbl: Label 'CalcFields';
+        AutoCalcFieldsCALLbl: Label 'AutoCalcFields';
         ListDemoLbl: Label 'Add Customer in List';
         DictionaryDemoLbl: Label 'All Customer in Dictionary';
         CustomerList: List of [Text];
