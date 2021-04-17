@@ -6,4 +6,20 @@
         "${UICop}"
     ],
 
+    "rest-client.previewOption": "body",
+    "rest-client.environmentVariables": {
+        "$shared": {},
+        "localdocker" : 
+        {
+            "username" : "admin",
+            "password" : "@Manager135",
+            "baseurl" : "http://bc18ussandbox:7048/bc"
+        },
+        "cloud":
+        {
+            "username" : "admin",
+            "password" : "", //use webservice key for user.
+            "baseurl" : "https://api.businesscentral.dynamics.com/v2.0/<<TenantID>>/<<EnvironmentName>>"            
+        }
+    }    
 }

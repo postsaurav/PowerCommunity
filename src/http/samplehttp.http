@@ -1,0 +1,54 @@
+### Power Community Demo ###
+get {{baseurl}}/api/v2.0/
+Authorization: Basic {{username}} {{password}}
+
+
+
+
+
+
+
+
+
+### Get Companies ###
+# @name companies
+get {{baseurl}}/api/v2.0/companies
+Authorization: Basic {{username}} {{password}}
+
+
+
+
+
+
+
+
+
+
+### set company Id variables ###
+@companyid = {{companies.response.body.value[1].id}}
+
+### Items ###
+get {{baseurl}}/api/v2.0/companies({{companyid}})/items
+Authorization: Basic {{username}} {{password}}
+
+
+
+### Employee ###
+get {{baseurl}}/api/v2.0/companies({{companyid}})/employees
+Authorization: Basic {{username}} {{password}}
+
+
+
+
+
+
+
+### Create Employee ###
+post {{baseurl}}/api/v2.0/companies({{companyid}})/employees
+Authorization: Basic {{username}} {{password}}
+Content-Type: application/json
+
+{
+    "surname" : "Community",
+    "givenName" : "Power"
+}
